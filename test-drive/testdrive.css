@@ -1,0 +1,41 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color:rgb(249, 247, 247);
+    font-size: 20px;
+}
+.container {
+    width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+h1 {
+    text-align: center;
+}
+label {
+    font-weight: bold;
+}
+input[type="text"], input[type="email"], input[type="date"], select {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid black;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+button {
+    background-color:rgb(17, 45, 78);
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+}
+button:hover {
+    background-color: #45a049;
+}

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+
+<head>
+    <title>Car Configurator </title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+
+    <link rel="stylesheet" href="car-configurator.css">
+</head>
+<script src="car-configurator.js"></script>
+<body>
+    <div id="navigation-bar">
+        <br>
+        <center>
+            <h1>CAR CONFIGURATOR</h1>
+        </center>
+    </div>
+
+    <div class="container">
+
+        <div class="img">
+            <img src="img.jpg" alt="" width="70%">
+        </div>
+
+        <div class="content">
+            <div ng-controller="DropdownCtrl">
+            <h1>Select a Car:</h1>
+            <select ng-model="selectedCar" ng-options="car.name for car in cars" class="box">
+                <option value="">Select a car</option>
+            </select>
+            
+            <div ng-if="selectedCar">
+                <p>You selected: {{ selectedCar.name }}</p>
+    
+                <h1>Select color:</h1>
+                <select ng-model="selectedColor" ng-options="color for color in selectedCar.colors" class="box">
+                    <option value="">Select a color</option>
+                </select>
+                <p ng-if="selectedColor">Selected color: {{ selectedColor }}</p>
+    
+                <h1>Select accessories:</h1>
+                <ul>
+                    <li ng-repeat="accessory in selectedCar.accessories">
+                        <label>
+                            <input type="checkbox" ng-model="accessory.selected">
+                            {{ accessory.name }} - {{ accessory.price | currency:"₹" }}
+                        </label>
+                    </li>
+                </ul>
+                <h1>Total Price: {{ calculateTotalPrice() | currency:"₹" }}</h1>
+            </div>
+        </div>
+
+        </div>
+        
+       
+
+    
+    
+</div>
+</body>
+
+</html>
